@@ -5,6 +5,8 @@ VisualStudioVersion = 17.10.34916.146
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "The_All_Breeds_Dogs_Club", "The_All_Breeds_Dogs_Club\The_All_Breeds_Dogs_Club.csproj", "{B544132F-C5A5-4685-BB70-7A103FC1B485}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClassLibrary", "ClassLibrary\ClassLibrary.csproj", "{E518B4DF-1C18-417A-BD81-F2DB7BF143AF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{B544132F-C5A5-4685-BB70-7A103FC1B485}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B544132F-C5A5-4685-BB70-7A103FC1B485}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B544132F-C5A5-4685-BB70-7A103FC1B485}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E518B4DF-1C18-417A-BD81-F2DB7BF143AF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E518B4DF-1C18-417A-BD81-F2DB7BF143AF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E518B4DF-1C18-417A-BD81-F2DB7BF143AF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E518B4DF-1C18-417A-BD81-F2DB7BF143AF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

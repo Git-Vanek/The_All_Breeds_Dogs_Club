@@ -1,3 +1,7 @@
+using ClassLibrary;
+using Microsoft.EntityFrameworkCore;
+using Npgsql.EntityFrameworkCore.PostgreSQL;
+
 namespace The_All_Breeds_Dogs_Club
 {
     public class Program
@@ -8,6 +12,12 @@ namespace The_All_Breeds_Dogs_Club
 
             // Add services to the container.
             builder.Services.AddRazorPages();
+
+            // получаем строку подключения из файла конфигурации
+            string connection = builder.Configuration.GetConnectionString("DefaultConnection");
+
+            // добавляем контекст ApplicationContext в качестве сервиса в приложение
+            builder.Services.AddDbContext<ApplicationContext>(options => options.UseNpgsql(connection));
 
             var app = builder.Build();
 
@@ -28,6 +38,7 @@ namespace The_All_Breeds_Dogs_Club
 
             app.MapRazorPages();
 
+            //app.MapGet("/", (ApplicationContext db) => db.пользователи.ToListAsync());
             app.Run();
         }
     }

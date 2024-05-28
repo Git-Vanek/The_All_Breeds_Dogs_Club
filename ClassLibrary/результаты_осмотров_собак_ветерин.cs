@@ -5,14 +5,14 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore;
 
 namespace ClassLibrary
 {
+    [PrimaryKey(nameof(индекс_результата), nameof(индекс_ветеринара))]
     public class результаты_осмотров_собак_ветерин
     {
-        [Key] [ForeignKey("результаты_осмотров_собак")] public int индекс_результата { get; set; }
-        public результаты_осмотров_собак результаты_осмотров_собак { get; set; }
-        [Key][ForeignKey("ветеринары")] public int индекс_ветеринара { get; set; }
-        public ветеринары ветеринары { get; set; }
+        [ForeignKey("результаты_осмотров_собак")] public int индекс_результата { get; set; }
+        [ForeignKey("ветеринары")] public int индекс_ветеринара { get; set; }
     }
 }

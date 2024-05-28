@@ -12,11 +12,9 @@ namespace ClassLibrary
     {
         [Key] public int индекс_собаки { get; set; }
         [ForeignKey("питомники")] public int индекс_питомника { get; set; }
-        public питомники питомники { get; set; }
         public string имя { get; set; }
         public string кличка { get; set; }
         [ForeignKey("породы")] public int индекс_породы { get; set; }
-        public породы породы { get; set; }
         public string пол { get; set; }
         public string номер { get; set; }
         public DateTime дата_рождения { get; set; }

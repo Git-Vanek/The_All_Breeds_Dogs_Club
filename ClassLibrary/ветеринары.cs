@@ -18,10 +18,8 @@ namespace ClassLibrary
         public string эл_почта { get; set; }
         public string паспортные_данные { get; set; }
         [ForeignKey("специализации")] public int индекс_специализации { get; set; }
-        public специализации специализации { get; set; }
         public bool лицензия { get; set; }
         public DateTime дата_трудоустройства { get; set; }
         [ForeignKey("пользователи")] public int индекс_пользователя { get; set; }
-        public пользователи пользователи { get; set; }
     }
 }

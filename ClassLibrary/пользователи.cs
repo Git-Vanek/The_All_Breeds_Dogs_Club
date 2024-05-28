@@ -15,6 +15,5 @@ namespace ClassLibrary
         public string пароль { get; set; }
         public string соль { get; set; }
         [ForeignKey("роли")] public int индекс_роли { get; set; }
-        public роли роли { get; set; }
     }
 }

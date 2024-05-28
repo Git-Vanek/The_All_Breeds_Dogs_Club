@@ -19,6 +19,5 @@ namespace ClassLibrary
         public string паспортные_данные { get; set; }
         public DateTime дата_трудоустройства { get; set; }
         [ForeignKey("пользователи")] public int индекс_пользователя { get; set; }
-        public пользователи пользователи { get; set; }
     }
 }

@@ -13,7 +13,6 @@ namespace ClassLibrary
         [Key] public int индекс_выставки { get; set; }
         public string название { get; set; }
         [ForeignKey("организаторы")] public int индекс_организатора { get; set; }
-        public организаторы организаторы { get; set; }
         public string город { get; set; }
         public string улица { get; set; }
         public string дом { get; set; }

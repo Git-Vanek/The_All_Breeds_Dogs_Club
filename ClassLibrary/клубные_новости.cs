@@ -12,7 +12,6 @@ namespace ClassLibrary
     {
         [Key] public int индекс_новости { get; set; }
         [ForeignKey("администраторы")] public int индекс_администратора { get; set; }
-        public администраторы администраторы { get; set; }
         public string заголовок { get; set; }
         public string ссылка_на_файл { get; set; }
         public DateTime дата_публикации { get; set; }

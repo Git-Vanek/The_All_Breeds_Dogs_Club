@@ -8,37 +8,44 @@ namespace The_All_Breeds_Dogs_Club
     {
         public static void Main(string[] args)
         {
+            // Создаем экземпляр приложения с помощью WebApplication.CreateBuilder
             var builder = WebApplication.CreateBuilder(args);
 
-            // Add services to the container.
+            // Добавляем RazorPages в качестве сервиса в приложение
             builder.Services.AddRazorPages();
 
-            // получаем строку подключения из файла конфигурации
+            // Получаем строку подключения к базе данных из файла конфигурации
             string connection = builder.Configuration.GetConnectionString("DefaultConnection");
 
-            // добавляем контекст ApplicationContext в качестве сервиса в приложение
+            // Добавляем контекст ApplicationContext в качестве сервиса в приложение и указываем,
+            // что для подключения к базе данных следует использовать Npgsql (PostgreSQL)
             builder.Services.AddDbContext<ApplicationContext>(options => options.UseNpgsql(connection));
 
+            // Создаем экземпляр приложения
             var app = builder.Build();
 
-            // Configure the HTTP request pipeline.
             if (!app.Environment.IsDevelopment())
             {
                 app.UseExceptionHandler("/Error");
-                // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
                 app.UseHsts();
             }
 
+            // Перенаправляем все HTTP-запросы на HTTPS
             app.UseHttpsRedirection();
+
+            // Обеспечиваем доступ к статическим файлам (css, js, изображения и т.д.)
             app.UseStaticFiles();
 
+            // Настраиваем маршрутизацию запросов
             app.UseRouting();
 
+            // Обеспечиваем авторизацию запросов
             app.UseAuthorization();
 
+            // Обеспечиваем обработку RazorPages
             app.MapRazorPages();
 
-            //app.MapGet("/", (ApplicationContext db) => db.пользователи.ToListAsync());
+            // Запускаем приложение
             app.Run();
         }
     }

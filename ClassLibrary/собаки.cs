@@ -18,6 +18,6 @@ namespace ClassLibrary
         public string пол { get; set; }
         public string номер { get; set; }
         public DateTime дата_рождения { get; set; }
-        public DateTime дата_последней_прививки { get; set; }
+        public DateTime? дата_последней_прививки { get; set; } = null!;
     }
 }

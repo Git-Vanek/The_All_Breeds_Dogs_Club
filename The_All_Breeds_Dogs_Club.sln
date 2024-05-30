@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.10.34916.146
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "The_All_Breeds_Dogs_Club", "The_All_Breeds_Dogs_Club\The_All_Breeds_Dogs_Club.csproj", "{B544132F-C5A5-4685-BB70-7A103FC1B485}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "The_All_Breeds_Dogs_Club", "The_All_Breeds_Dogs_Club\The_All_Breeds_Dogs_Club.csproj", "{B544132F-C5A5-4685-BB70-7A103FC1B485}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClassLibrary", "ClassLibrary\ClassLibrary.csproj", "{E518B4DF-1C18-417A-BD81-F2DB7BF143AF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ClassLibrary", "ClassLibrary\ClassLibrary.csproj", "{E518B4DF-1C18-417A-BD81-F2DB7BF143AF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

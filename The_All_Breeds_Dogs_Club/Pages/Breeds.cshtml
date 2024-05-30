@@ -1,12 +1,15 @@
 ﻿@page
 @model The_All_Breeds_Dogs_Club.Pages.BreedsModel
 @{
-	ViewData["Title"] = "Breeds";
+    ViewData["Title"] = "Breeds";
 }
 
 <h2>Список пород</h2>
 <div>
-    <input type="hidden" id="breedId" />
+    <p>
+        Индекс:<br />
+        <input id="breedId" />
+    </p>
     <p>
         Название:<br />
         <input id="breedName" />
@@ -23,3 +26,5 @@
         <tbody></tbody>
     </table>
 </div>
+
+<script src="~/js/Breeds.js" asp-append-version="true"></script>

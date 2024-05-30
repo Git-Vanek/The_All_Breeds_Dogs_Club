@@ -45,6 +45,64 @@ namespace The_All_Breeds_Dogs_Club
             // Обеспечиваем обработку RazorPages
             app.MapRazorPages();
 
+            // Обработка запросов для таблицы породы
+            app.MapGet("/api/breeds", async (ApplicationContext db) => await db.породы.ToListAsync());
+
+            app.MapGet("/api/breeds/{индекс_породы:int}", async (int индекс_породы, ApplicationContext db) =>
+            {
+                // получаем породу по id
+                породы? breed = await db.породы.FirstOrDefaultAsync(u => u.индекс_породы == индекс_породы);
+
+                // если не найдена, отправляем статусный код и сообщение об ошибке
+                if (breed == null) return Results.NotFound(new { message = "Порода не найдена" });
+
+                // если порода найдена, отправляем ее
+                return Results.Json(breed);
+            });
+
+            app.MapDelete("/api/breeds/{индекс_породы:int}", async (int индекс_породы, ApplicationContext db) =>
+            {
+                try
+                {
+                    // получаем породу по id
+                    породы? breed = await db.породы.FirstOrDefaultAsync(u => u.индекс_породы == индекс_породы);
+
+                    // если не найдена, отправляем статусный код и сообщение об ошибке
+                    if (breed == null) return Results.NotFound(new { message = "Порода не найдена" });
+
+                    // если порода найдена, удаляем ее
+                    db.породы.Remove(breed);
+                    await db.SaveChangesAsync();
+                    return Results.Json(breed);
+                }
+                catch
+                {
+                    throw new Exception();
+                }
+            });
+
+            app.MapPost("/api/breeds", async (породы breed, ApplicationContext db) =>
+            {
+                // добавляем породу в массив
+                await db.породы.AddAsync(breed);
+                await db.SaveChangesAsync();
+                return breed;
+            });
+
+            app.MapPut("/api/breeds", async (породы breedData, ApplicationContext db) =>
+            {
+                // получаем породу по id
+                var breed = await db.породы.FirstOrDefaultAsync(u => u.индекс_породы == breedData.индекс_породы);
+
+                // если не найдена, отправляем статусный код и сообщение об ошибке
+                if (breed == null) return Results.NotFound(new { message = "Порода не найдена" });
+
+                // если порода найдена, изменяем ее данные и отправляем обратно клиенту
+                breed.название = breedData.название;
+                await db.SaveChangesAsync();
+                return Results.Json(breed);
+            });
+
             // Запускаем приложение
             app.Run();
         }

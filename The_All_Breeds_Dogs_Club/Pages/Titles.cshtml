@@ -3,3 +3,23 @@
 @{
 	ViewData["Title"] = "Titles";
 }
+
+<h2>Список титулов</h2>
+<div>
+    <input type="hidden" id="titleId" />
+    <p>
+        Название:<br />
+        <input id="titleName" />
+    </p>
+    <p>
+        <button id="saveBtn">Сохранить</button>
+        <button id="resetBtn">Сбросить</button>
+    </p>
+</div>
+
+<div class="overflow-auto">
+	<table class="table">
+		<thead><tr><th>Индекс</th><th>Название</th><th></th></tr></thead>
+		<tbody></tbody>
+	</table>
+</div>

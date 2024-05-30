@@ -3,3 +3,51 @@
 @{
 	ViewData["Title"] = "Dogs";
 }
+
+<h2>Список собак</h2>
+<div>
+    <input type="hidden" id="dogId" />
+    <p>
+        Питомник:<br />
+        <input id="dogKennel" />
+    </p>
+    <p>
+        Имя:<br />
+        <input id="dogName" />
+    </p>
+    <p>
+        Кличка:<br />
+        <input id="dogNick" />
+    </p>
+    <p>
+        Порода:<br />
+        <input id="dogBreed" />
+    </p>
+    <p>
+        Пол:<br />
+        <input id="dogGender" />
+    </p>
+    <p>
+        Номер:<br />
+        <input id="dogNumber" />
+    </p>
+    <p>
+        Дата рождения:<br />
+        <input id="dogBirthDay" />
+    </p>
+    <p>
+        Дата последней прививки:<br />
+        <input id="dogLastVacDay" />
+    </p>
+    <p>
+        <button id="saveBtn">Сохранить</button>
+        <button id="resetBtn">Сбросить</button>
+    </p>
+</div>
+
+<div class="overflow-auto">
+    <table class="table">
+        <thead><tr><th>Индекс</th><th>Питомник</th><th>Имя</th><th>Кличка</th><th>Порода</th><th>Пол</th><th>Номер</th><th>Дата рождения</th><th>Дата последней прививки</th><th></th></tr></thead>
+        <tbody></tbody>
+    </table>
+</div>

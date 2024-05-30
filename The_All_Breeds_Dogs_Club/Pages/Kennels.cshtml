@@ -3,3 +3,31 @@
 @{
 	ViewData["Title"] = "Kennels";
 }
+
+<h2>Список питомников</h2>
+<div>
+    <input type="hidden" id="kennelId" />
+    <p>
+        Название:<br />
+        <input id="kennelName" />
+    </p>
+    <p>
+        Телефон:<br />
+        <input id="kennelTelephone" />
+    </p>
+    <p>
+        Статус:<br />
+        <input id="kennelStatus" />
+    </p>
+    <p>
+        <button id="saveBtn">Сохранить</button>
+        <button id="resetBtn">Сбросить</button>
+    </p>
+</div>
+
+<div class="overflow-auto">
+    <table class="table">
+        <thead><tr><th>Индекс</th><th>Название</th><th>Телефон</th><th>Статус</th><th></th></tr></thead>
+        <tbody></tbody>
+    </table>
+</div>

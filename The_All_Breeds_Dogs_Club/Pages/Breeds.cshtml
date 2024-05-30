@@ -3,3 +3,23 @@
 @{
 	ViewData["Title"] = "Breeds";
 }
+
+<h2>Список пород</h2>
+<div>
+    <input type="hidden" id="breedId" />
+    <p>
+        Название:<br />
+        <input id="breedName" />
+    </p>
+    <p>
+        <button id="saveBtn">Сохранить</button>
+        <button id="resetBtn">Сбросить</button>
+    </p>
+</div>
+
+<div class="overflow-auto">
+    <table class="table">
+        <thead><tr><th>Индекс</th><th>Название</th><th></th></tr></thead>
+        <tbody></tbody>
+    </table>
+</div>

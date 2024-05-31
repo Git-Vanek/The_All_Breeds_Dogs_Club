@@ -29,7 +29,13 @@
                                     <li><a class="dropdown-item" asp-area="" asp-page="/Dogs">Собаки</a></li> 
                                 </ul> 
                             </li>
-                            <li class="nav-item"> <a class="nav-link text-dark" asp-area="" asp-page="/Request">Запросы</a> </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link text-dark dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"> Запросы </a>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" asp-area="" asp-page="/Dogtrainig">Тренировки</a></li>
+                                    <li><a class="dropdown-item" asp-area="" asp-page="/Dogshow">Выставки</a></li>
+                                </ul>
+                            </li>
                         </ul> 
                     </div>
                 </div> 

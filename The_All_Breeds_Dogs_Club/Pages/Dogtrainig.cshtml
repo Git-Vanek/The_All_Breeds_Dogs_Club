@@ -1,0 +1,28 @@
+﻿@page
+@model The_All_Breeds_Dogs_Club.Pages.DogtrainigModel
+@{
+	ViewData["Title"] = "Dogtrainig";
+}
+
+<h1>Тренировки собак</h1>
+<table id="t-table">
+    <thead>
+        <tr>
+            <th>Название тренировки</th>
+            <th>Количество собак</th>
+        </tr>
+    </thead>
+    <tbody></tbody>
+</table>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+    $(document).ready(function () {
+        $.getJSON("/api/request/training", function (data) {
+            var table = $("#t-table");
+            data.forEach(function (item) {
+                table.append("<tr><td>" + item.name + "</td><td>" + item.dogCount + "</td></tr>");
+            });
+        });
+    });
+</script>

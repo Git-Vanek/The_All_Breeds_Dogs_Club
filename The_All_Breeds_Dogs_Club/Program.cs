@@ -1,6 +1,8 @@
 using ClassLibrary;
 using Microsoft.EntityFrameworkCore;
 using Npgsql.EntityFrameworkCore.PostgreSQL;
+using System.Text.RegularExpressions;
+using System.Xml.Linq;
 
 namespace The_All_Breeds_Dogs_Club
 {
@@ -101,6 +103,34 @@ namespace The_All_Breeds_Dogs_Club
                 breed.название = breedData.название;
                 await db.SaveChangesAsync();
                 return Results.Json(breed);
+            });
+
+            app.MapGet("/api/request/training", async (ApplicationContext db) =>
+            {
+                var query = from t in db.тренировки
+                            join ts in db.собаки_тренировки on t.индекс_тренировки equals ts.индекс_тренировки
+                            group ts by t.название into g
+                            select new
+                            {
+                                Name = g.Key,
+                                DogCount = g.Count()
+                            };
+
+                return await query.ToListAsync();
+            });
+
+            app.MapGet("/api/request/dogshow", async (ApplicationContext db) =>
+            {
+                var query = from t in db.выставки
+                            join ts in db.собаки_выставки on t.индекс_выставки equals ts.индекс_выставки
+                            group ts by t.название into g
+                            select new
+                            {
+                                Name = g.Key,
+                                DogCount = g.Count()
+                            };
+
+                return await query.ToListAsync();
             });
 
             // Запускаем приложение
